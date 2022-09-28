@@ -1,0 +1,3 @@
+.box-grey{
+    @apply shadow-md rounded-full bg-slate-400
+}
