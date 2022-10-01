@@ -7,9 +7,13 @@ import { quanLyRapService } from '../../../services/QuanLyRapService';
 import { useFormik } from 'formik';
 import moment from 'moment';
 import { quanLyDatVeService } from '../../../services/QuanLyDatVeService';
+import { useDispatch } from 'react-redux';
+import { layDanhSachPhimAction } from '../../../redux/actions/QuanLyPhimActions';
+import { history } from '../../../App';
 
 export default function ShowTime(props) {
 
+    const dispatch = useDispatch();
     const formik =  useFormik({
         initialValues:{
             maPhim:props.match.params.id,
@@ -23,7 +27,9 @@ export default function ShowTime(props) {
                 const result = await quanLyDatVeService.taoLichChieu(values);
 
                 alert(result.data.content);
-
+             
+                history.push('/admin/films')
+                window.location.reload();
             }catch(error) {
                 console.log('error',error.response?.data)
             }
@@ -35,7 +41,7 @@ export default function ShowTime(props) {
         heThongRapChieu: [],
         cumRapChieu: []
     })
-    console.log(state.heThongRapChieu)
+    // console.log(state.heThongRapChieu)
 
     useEffect(async () => {
         try {
@@ -49,7 +55,9 @@ export default function ShowTime(props) {
 
         }
 
-
+        // return () => {
+        //     dispatch(layDanhSachPhimAction());
+        // }
     }, [])
 
     const handleChangeHeThongRap = async (value) => {
@@ -75,13 +83,13 @@ export default function ShowTime(props) {
 
     const onOk = (values) => {
         formik.setFieldValue('ngayChieuGioChieu',moment(values).format('DD/MM/YYYY hh:mm:ss'))
-        console.log('values',moment(values).format('DD/MM/YYYY hh:mm:ss'));
+        // console.log('values',moment(values).format('DD/MM/YYYY hh:mm:ss'));
     }
 
     const onChangeDate = (values) => {
 
         formik.setFieldValue('ngayChieuGioChieu',moment(values).format('DD/MM/YYYY hh:mm:ss'))
-        console.log('values',moment(values).format('DD/MM/YYYY hh:mm:ss'));
+        // console.log('values',moment(values).format('DD/MM/YYYY hh:mm:ss'));
     }
     const onchangeInputNumber = (value) => {
         formik.setFieldValue('giaVe',value)
@@ -94,7 +102,7 @@ export default function ShowTime(props) {
         })
     }
 
-    console.log(props.match.params);
+    // console.log(props.match.params);
     let film = {};
     if(localStorage.getItem('filmParams')) {
         film = JSON.parse(localStorage.getItem('filmParams'));
@@ -126,7 +134,7 @@ export default function ShowTime(props) {
                 </Form.Item>
                
                 <Form.Item label="Giá vé">
-                    <InputNumber  onChange={onchangeInputNumber} />
+                    <InputNumber min={75000} max={150000}  onChange={onchangeInputNumber} />
                 </Form.Item>
                 <Form.Item label="Chức năng">
                     <Button htmlType="submit">Tạo lịch chiếu</Button>

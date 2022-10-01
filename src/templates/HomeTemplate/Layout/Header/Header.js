@@ -17,7 +17,16 @@ export default function Header(props) {
     const { userLogin } = useSelector(state => state.QuanLyNguoiDungReducer);
 
     const { t, i18n } = useTranslation();
+    const userDetail =  JSON.parse(localStorage.getItem('USER_LOGIN'))
 
+
+    const renderAdminSite = () => {
+        if (userDetail?.maLoaiNguoiDung === 'QuanTri') {
+            return <li className="flex">
+            <NavLink to="/admin" className="flex items-center -mb-0.5 border-b-2 px-4 border-transparent text-white" activeClassName="border-b-2 border-white">Admin</NavLink>
+        </li>
+        }
+    }
 
     const handleChange = (value) => {
         i18n.changeLanguage(value)
@@ -32,7 +41,7 @@ export default function Header(props) {
                 }} className="self-center px-8 py-3 rounded">{t('signin')}</button>
                 <button onClick={() => {
                     history.push('/register')
-                }} className="self-center px-8 py-3 font-semibold rounded bg-violet-600 text-coolGray-50">{t('register')}</button>
+                }} className="self-center px-8 py-3 mr-8 font-semibold rounded bg-violet-600 text-coolGray-50">{t('register')}</button>
 
             </Fragment>
         }
@@ -65,6 +74,8 @@ export default function Header(props) {
                     <li className="flex">
                         <NavLink to="/news" className="flex items-center -mb-0.5 border-b-2 px-4 border-transparent text-white" activeClassName="border-b-2 border-white">News</NavLink>
                     </li>
+                    
+                    {renderAdminSite()}
 
                 </ul>
                 <div className="items-center flex-shrink-0 hidden lg:flex">
@@ -89,7 +100,6 @@ export default function Header(props) {
                 </button>
 
 
-                {/* {t('hello.2')} */}
             </div>
         </header>
 

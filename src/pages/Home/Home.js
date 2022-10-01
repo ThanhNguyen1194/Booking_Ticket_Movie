@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import HomeMenu from './HomeMenu/HomeMenu'
 //Kết nối redux
 import { useSelector, useDispatch } from 'react-redux'
@@ -12,19 +12,13 @@ export default function Home(props) {
 
     const { arrFilm } = useSelector(state => state.QuanLyPhimReducer);
     const {heThongRapChieu} = useSelector(state => state.QuanLyRapReducer);
+
+    // const userLogin = localStorage.getItem('USER_LOGIN');
     const dispatch = useDispatch();
-    console.log('propsHome', arrFilm);
-    // props.match.params
-
-    // const renderFilms = () => {
-    //     return arrFilm.map((phim, index) => {
-    //         return <Film key={index} />
-
-
-    //     })
-    // }
-
+    // console.log('propsHome', arrFilm);
+   
     useEffect(()=>{
+        // console.log('renderFilms', arrFilm);
         const action = layDanhSachPhimAction();
         dispatch(action); //dispatch function từ thunk
 
@@ -40,9 +34,6 @@ export default function Home(props) {
                 <div className="container px-5 py-24 mx-auto " >
 
                     <MultipleRowSlick arrFilm={arrFilm}/>
-                    {/* <div className="flex flex-wrap  " style={{ justifyContent: 'center' }}>
-                        {renderFilms()}
-                    </div> */}
                 </div>
             </section>
 

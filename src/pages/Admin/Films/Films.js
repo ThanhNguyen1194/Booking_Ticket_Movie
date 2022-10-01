@@ -15,9 +15,11 @@ export default function Films() {
 
     const dispatch = useDispatch();
 
-    console.log('arrFilmDefault', arrFilmDefault);
+    // console.log('arrFilmDefault', arrFilmDefault);
 
     useEffect(() => {
+    // console.log('danh sách phim', arrFilmDefault);
+
         dispatch(layDanhSachPhimAction());
 
     }, [])
@@ -39,7 +41,7 @@ export default function Films() {
             dataIndex: 'hinhAnh',
             render: (text, film, index) => {
                 return <Fragment>
-                    <img src={film.hinhAnh} alt={film.tenPhim} width={50} height={50} onError={(e) => { e.target.onError = null; e.target.src = `https://picsum.photos/id/${index}/50/50` }} />
+                    <img src={film?.hinhAnh} alt={film?.tenPhim} width={50} height={50} onError={(e) => { e.target.onError = null; e.target.src = `https://picsum.photos/id/${index}/50/50` }} />
                 </Fragment>
             },
             width: '15%'
@@ -49,8 +51,8 @@ export default function Films() {
             title: 'Tên phim',
             dataIndex: 'tenPhim',
             sorter: (a, b) => {
-                let tenPhimA = a.tenPhim.toLowerCase().trim();
-                let tenPhimB = b.tenPhim.toLowerCase().trim();
+                let tenPhimA = a.tenPhim?.toLowerCase().trim();
+                let tenPhimB = b.tenPhim?.toLowerCase().trim();
                 if (tenPhimA > tenPhimB) {
                     return 1;
                 }
@@ -72,7 +74,7 @@ export default function Films() {
             // },
             render: (text, film) => {
                 return <Fragment>
-                    {film.moTa.length > 50 ? film.moTa.substr(0, 50) + ' ...' : film.moTa}
+                    {film?.moTa.length > 50 ? film?.moTa.substr(0, 50) + ' ...' : film?.moTa}
                 </Fragment>
             },
             sortDirections: ['descend', 'ascend'],
@@ -83,18 +85,18 @@ export default function Films() {
             dataIndex: 'maPhim',
             render: (text, film) => {
                 return <Fragment>
-                    <NavLink key={1} className=" mr-2  text-2xl" to={`/admin/films/edit/${film.maPhim}`}><EditOutlined style={{ color: 'blue' }} /> </NavLink>
+                    <NavLink key={1} className=" mr-2  text-2xl" to={`/admin/films/edit/${film?.maPhim}`}><EditOutlined style={{ color: 'blue' }} /> </NavLink>
                     <span style={{ cursor: 'pointer' }} key={2} className="text-2xl" onClick={() => {
                         //Gọi action xoá
                         if (window.confirm('Bạn có chắc muốn xoá phim ' + film.tenPhim)) {
                             //Gọi action
-                            dispatch(xoaPhimAction(film.maPhim));
+                            dispatch(xoaPhimAction(film?.maPhim));
                         }
 
 
                     }}><DeleteOutlined style={{ color: 'red' }} /> </span>
 
-                    <NavLink key={1} className=" mr-2 text-2xl" to={`/admin/films/showtime/${film.maPhim}/${film.tenPhim}`} onClick={()=>{
+                    <NavLink key={1} className=" mr-2 text-2xl" to={`/admin/films/showtime/${film?.maPhim}/${film?.tenPhim}`} onClick={()=>{
                         localStorage.setItem('filmParams',JSON.stringify(film));
                     }}><CalendarOutlined style={{ color: 'green' }} /> </NavLink>
                 </Fragment>

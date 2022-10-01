@@ -52,7 +52,7 @@ const MultipleRowSlick = (props) => {
 
   let activeClassSC = sapChieu === true ? 'active_Film' : 'none_active_Film';
   
-  console.log('activeSC',activeClassSC)
+  // console.log('activeSC',activeClassSC)
   
   const settings = {
     className: "center variable-width",

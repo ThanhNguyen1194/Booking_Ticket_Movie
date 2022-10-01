@@ -5,10 +5,12 @@ import {history} from '../../App'
 
 
 export const layDanhSachPhimAction = (tenPhim='') => {
+    // console.log('phim action')
     
 
     return async (dispatch) => {
         try {
+            // console.log('phim action')
             //Sử dụng tham số thamSo
             const result = await quanLyPhimService.layDanhSachPhim(tenPhim);
 
@@ -91,7 +93,7 @@ export const xoaPhimAction = (maPhim) => {
         try {
             //Sử dụng tham số thamSo
             const result = await quanLyPhimService.xoaPhim(maPhim);
-            console.log('result',result.data.content);
+            // console.log('result',result.data.content);
             alert('Xoá phim thành công !');
             //Sau khi xoá load lại danh sách phim mới;
             dispatch(layDanhSachPhimAction())
