@@ -23,7 +23,7 @@ export default function Header(props) {
     const renderAdminSite = () => {
         if (userDetail?.maLoaiNguoiDung === 'QuanTri') {
             return <li className="flex">
-                <NavLink to="/admin" className="flex items-center -mb-0.5 border-b-2 px-4 border-transparent text-white" activeClassName="border-b-2 border-white">Admin</NavLink>
+                <NavLink to="/admin/films" className="flex items-center -mb-0.5 border-b-2 px-4 border-transparent text-white" activeClassName="border-b-2 border-white">Admin</NavLink>
             </li>
         }
     }

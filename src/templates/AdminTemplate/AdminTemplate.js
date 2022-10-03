@@ -48,23 +48,25 @@ const AdminTemplate = (props) => { //path, exact, Component
     }
 
     const operations = <Fragment>
-        {!_.isEmpty(userLogin) ? <Fragment> 
-            
-        <span className='hover:text-green-500' style={{display:'inline-block', cursor: 'pointer'}} onClick={() => {
-            history.push('/profile')
-        }}>
-        
-        <p style={{color:'white'}} className='hover:text-green-500' >
-             <span style={{ width: 50, height: 50, display:'inline-block',lineHeight: '50px',
-    paddingRight: '20px'}} className="text-2xl mx-2 rounded-full bg-red-200">{userLogin.taiKhoan.substr(0, 1)}</span>
-     Hello ! {userLogin.taiKhoan}</p>
-        </span>
-        <button onClick={() => {
-            localStorage.removeItem(USER_LOGIN);
-            localStorage.removeItem(TOKEN);
-            history.push('/home');
-            window.location.reload();
-        }} className="text-white ml-5 hover:text-green-500">Đăng xuất</button> </Fragment> : ''}
+        {!_.isEmpty(userLogin) ? <Fragment>
+
+            <span className='hover:text-green-500' style={{ display: 'inline-block', cursor: 'pointer' }} onClick={() => {
+                history.push('/profile')
+            }}>
+
+                <p style={{ color: 'white' }} className='hover:text-green-500' >
+                    <span style={{
+                        width: 50, height: 50, display: 'inline-block', lineHeight: '50px',
+                        paddingRight: '20px'
+                    }} className="text-2xl mx-2 rounded-full bg-red-200">{userLogin.taiKhoan.substr(0, 1)}</span>
+                    Hello ! {userLogin.taiKhoan}</p>
+            </span>
+            <button onClick={() => {
+                localStorage.removeItem(USER_LOGIN);
+                localStorage.removeItem(TOKEN);
+                history.push('/home');
+                window.location.reload();
+            }} className="text-white ml-5 hover:text-green-500">Đăng xuất</button> </Fragment> : ''}
     </Fragment>
 
 
@@ -80,22 +82,22 @@ const AdminTemplate = (props) => { //path, exact, Component
                         {/* <Menu.Item key="1" icon={<UserOutlined />}>
                             <NavLink to="/admin/users">Users</NavLink>
                         </Menu.Item> */}
-                        <SubMenu key="sub1" icon={<FileOutlined />} title="Films Manager">
-                            <Menu.Item key="10" icon={<FileOutlined />}>
-                                <NavLink to="/admin/films">Films</NavLink>
-                               
-                            </Menu.Item>
+                        <SubMenu key="1" icon={<FileOutlined />} title="Films Manager">
                             <Menu.Item key="11" icon={<FileOutlined />}>
-                            <NavLink to="/admin/films/addnew">Add new</NavLink>
+                                <NavLink to="/admin/films">Films</NavLink>
 
-                               
+                            </Menu.Item>
+                            <Menu.Item key="12" icon={<FileOutlined />}>
+                                <NavLink to="/admin/films/addnew">Add new</NavLink>
+
+
                             </Menu.Item>
                         </SubMenu>
                         <Menu.Item key="3" icon={<DesktopOutlined />}>
                             <NavLink to="/admin/usermanager">User Manager</NavLink>
 
                         </Menu.Item>
-                       
+
                     </Menu>
                 </Sider>
                 <Layout className="site-layout">
@@ -104,13 +106,13 @@ const AdminTemplate = (props) => { //path, exact, Component
                     </Header>
                     <Content style={{ margin: '0 16px' }}>
                         <Breadcrumb style={{ margin: '16px 0' }}>
-                           
+
                         </Breadcrumb>
                         <div className="site-layout-background " style={{ padding: 24, minHeight: '85vh' }}>
                             <Component {...propsRoute} />
                         </div>
                     </Content>
-                   
+
                 </Layout>
             </Layout>
         </Fragment>
