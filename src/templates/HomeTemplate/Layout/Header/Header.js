@@ -17,14 +17,14 @@ export default function Header(props) {
     const { userLogin } = useSelector(state => state.QuanLyNguoiDungReducer);
 
     const { t, i18n } = useTranslation();
-    const userDetail =  JSON.parse(localStorage.getItem('USER_LOGIN'))
+    const userDetail = JSON.parse(localStorage.getItem('USER_LOGIN'))
 
 
     const renderAdminSite = () => {
         if (userDetail?.maLoaiNguoiDung === 'QuanTri') {
             return <li className="flex">
-            <NavLink to="/admin" className="flex items-center -mb-0.5 border-b-2 px-4 border-transparent text-white" activeClassName="border-b-2 border-white">Admin</NavLink>
-        </li>
+                <NavLink to="/admin" className="flex items-center -mb-0.5 border-b-2 px-4 border-transparent text-white" activeClassName="border-b-2 border-white">Admin</NavLink>
+            </li>
         }
     }
 
@@ -66,15 +66,18 @@ export default function Header(props) {
                 </NavLink>
                 <ul className="items-stretch hidden space-x-3 lg:flex">
                     <li className="flex">
-                        <NavLink to="/home" className="flex items-center -mb-0.5 border-b-2 px-4 border-transparent text-violet-600 border-violet-600 text-white" activeClassName="border-b-2 border-white">Home</NavLink>
+                        <NavLink to="/home" className="flex items-center -mb-0.5 border-b-2 px-4 border-transparent  text-white" activeClassName="border-b-2  border-violet-600 text-violet-600">Home</NavLink>
                     </li>
+                    {/* <li className="flex">
+                        <NavLink to="/contact" className="flex items-center -mb-0.5 border-b-2 px-4 border-transparent text-white" activeClassName="border-b-2 border-violet-600 text-violet-600">Contact</NavLink>
+                    </li> */}
                     <li className="flex">
-                        <NavLink to="/contact" className="flex items-center -mb-0.5 border-b-2 px-4 border-transparent text-white" activeClassName="border-b-2 border-white">Contact</NavLink>
+                        <NavLink to="/profile" className="flex items-center -mb-0.5 border-b-2 px-4 border-transparent text-white" activeClassName="border-b-2 border-violet-600 text-violet-600">Profile</NavLink>
                     </li>
-                    <li className="flex">
-                        <NavLink to="/news" className="flex items-center -mb-0.5 border-b-2 px-4 border-transparent text-white" activeClassName="border-b-2 border-white">News</NavLink>
-                    </li>
-                    
+                    {/* <li className="flex">
+                        <NavLink to="/news" className="flex items-center -mb-0.5 border-b-2 px-4 border-transparent text-white" activeClassName="border-b-2 border-violet-600 text-violet-600">News</NavLink>
+                    </li> */}
+
                     {renderAdminSite()}
 
                 </ul>

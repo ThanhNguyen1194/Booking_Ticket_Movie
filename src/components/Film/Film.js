@@ -37,7 +37,7 @@ const AddNew = () => {
 
     },
     onSubmit: (values) => {
-      console.log('values', values);
+      // console.log('values', values);
       values.maNhom = GROUPID;
       //Tạo đối tượng formdata => Đưa giá trị values từ formik vào formdata
       let formData = new FormData();
@@ -45,7 +45,7 @@ const AddNew = () => {
         if (key !== 'hinhAnh') {
           formData.append(key, values[key]);
         } else {
-            formData.append('File', values.hinhAnh, values.hinhAnh.name);
+          formData.append('File', values.hinhAnh, values.hinhAnh.name);
         }
       }
       //Gọi api gửi các giá trị formdata về backend xử lý
@@ -123,13 +123,13 @@ const AddNew = () => {
           </Radio.Group>
         </Form.Item>
         <Form.Item label="Tên phim">
-          <Input name="tenPhim"  onChange={formik.handleChange} />
+          <Input name="tenPhim" onChange={formik.handleChange} />
         </Form.Item>
         <Form.Item label="Trailer">
           <Input name="trailer" onChange={formik.handleChange} />
         </Form.Item>
         <Form.Item label="Mô tả">
-          <Input name="moTa"  onChange={formik.handleChange} />
+          <Input name="moTa" onChange={formik.handleChange} />
         </Form.Item>
         <Form.Item label="Ngày khởi chiếu">
           <DatePicker format={"DD/MM/YYYY"} onChange={handleChangeDatePicker} />

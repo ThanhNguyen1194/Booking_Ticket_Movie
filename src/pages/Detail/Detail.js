@@ -18,7 +18,7 @@ export default function Detail(props) {
 
     const filmDetail = useSelector(state => state.QuanLyPhimReducer.filmDetail);
 
-    console.log({ filmDetail })
+    // console.log({ filmDetail })
 
     const dispatch = useDispatch();
 
@@ -75,52 +75,52 @@ export default function Detail(props) {
 
                 <div className="mt-10 ml-72 w-2/3 container bg-white px-5 py-5" >
                     <Tabs defaultActiveKey="1" centered >
-                        <TabPane tab="Lịch chiếu" key="1" style={{minHeight:300}}>
+                        <TabPane tab="Lịch chiếu" key="1" style={{ minHeight: 300 }}>
                             <div >
                                 <Tabs tabPosition={'left'} >
                                     {filmDetail.heThongRapChieu?.map((htr, index) => {
                                         return <TabPane
                                             tab={<div className="flex flex-row items-center justify-center">
-                                                <img src={htr.logo} className="rounded-full w-full" style={{width:50}} alt="..." />
+                                                <img src={htr.logo} className="rounded-full w-full" style={{ width: 50 }} alt="..." />
                                                 <div className="text-center ml-2">
-                                                {htr.tenHeThongRap}
+                                                    {htr.tenHeThongRap}
                                                 </div>
                                             </div>}
                                             key={index}>
-                                                {htr.cumRapChieu?.map((cumRap,index)=>{ 
-                                                    return <div className="mt-5" key={index}>
-                                                        <div className="flex flex-row">
-                                                            <img style={{width:60,height:60}} src={cumRap.hinhAnh} alt="..." />
-                                                            <div className="ml-2">
-                                                                <p style={{fontSize:20,fontWeight:'bold',lineHeight:1}} >{cumRap.tenCumRap}</p>
-                                                                <p className="text-gray-400" style={{marginTop:0}}>{cumRap.diaChi}</p>
-                                                            </div>
-                                                        </div>
-                                                        <div className="thong-tin-lich-chieu grid grid-cols-4">
-                                                            {cumRap.lichChieuPhim?.slice(0,12).map((lichChieu,index) => {
-                                                                return <NavLink to={`/checkout/${lichChieu.maLichChieu}`} key={index} className="col-span-1 text-green-800 font-bold">
-                                                                    {moment(lichChieu.ngayChieuGioChieu).format('hh:mm A')}
-                                                                </NavLink>
-                                                            })}
+                                            {htr.cumRapChieu?.map((cumRap, index) => {
+                                                return <div className="mt-5" key={index}>
+                                                    <div className="flex flex-row">
+                                                        <img style={{ width: 60, height: 60 }} src={cumRap.hinhAnh} alt="..." />
+                                                        <div className="ml-2">
+                                                            <p style={{ fontSize: 20, fontWeight: 'bold', lineHeight: 1 }} >{cumRap.tenCumRap}</p>
+                                                            <p className="text-gray-400" style={{ marginTop: 0 }}>{cumRap.diaChi}</p>
                                                         </div>
                                                     </div>
-                                                })}
+                                                    <div className="thong-tin-lich-chieu grid grid-cols-4">
+                                                        {cumRap.lichChieuPhim?.slice(0, 12).map((lichChieu, index) => {
+                                                            return <NavLink to={`/checkout/${lichChieu.maLichChieu}`} key={index} className="col-span-1 text-green-800 font-bold">
+                                                                {moment(lichChieu.ngayChieuGioChieu).format('hh:mm A')}
+                                                            </NavLink>
+                                                        })}
+                                                    </div>
+                                                </div>
+                                            })}
 
 
 
-                                    </TabPane>
+                                        </TabPane>
                                     })}
 
 
                                 </Tabs>
                             </div>
                         </TabPane>
-                        <TabPane tab="Thông tin" key="2" style={{minHeight:300}}>
+                        <TabPane tab="Thông tin" key="2" style={{ minHeight: 300 }}>
                             Thông tin
-                    </TabPane>
-                        <TabPane tab="Đánh giá" key="3" style={{minHeight:300}}>
+                        </TabPane>
+                        <TabPane tab="Đánh giá" key="3" style={{ minHeight: 300 }}>
                             Đánh giá
-                    </TabPane>
+                        </TabPane>
                     </Tabs>
                 </div>
 

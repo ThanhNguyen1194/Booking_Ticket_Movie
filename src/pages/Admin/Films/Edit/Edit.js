@@ -22,7 +22,7 @@ const Edit = (props) => {
 
   const [componentSize, setComponentSize] = useState('default');
   const { thongTinPhim } = useSelector(state => state.QuanLyPhimReducer);
-  console.log('thongTinPhim', thongTinPhim);
+  // console.log('thongTinPhim', thongTinPhim);
   const [imgSrc, setImgSrc] = useState('');
   const dispatch = useDispatch();
 
@@ -52,7 +52,7 @@ const Edit = (props) => {
     },
 
     onSubmit: (values) => {
-      console.log('values', values);
+      // console.log('values', values);
       values.maNhom = GROUPID;
       //Tạo đối tượng formdata => Đưa giá trị values từ formik vào formdata
       let formData = new FormData();
@@ -173,7 +173,7 @@ const Edit = (props) => {
           <img width={100} height={100} src={imgSrc === '' ? thongTinPhim.hinhAnh : imgSrc} />
         </Form.Item>
         <Form.Item label="Button">
-          <button type="submit" className="bg-blue-300 text-white p-2">Cập nhật</button>
+          <button type="submit" className="bg-blue-500 text-white p-2">Cập nhật</button>
 
         </Form.Item>
       </Form>

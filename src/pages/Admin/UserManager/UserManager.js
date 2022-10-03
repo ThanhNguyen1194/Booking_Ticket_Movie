@@ -1,26 +1,32 @@
 import React from 'react'
 import { Input, Button, Space, Table, Tag } from 'antd';
-import {  EditOutlined, DeleteOutlined } from '@ant-design/icons';
+import { EditOutlined, DeleteOutlined } from '@ant-design/icons';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import { layDanhSachUser } from '../../../redux/actions/QuanLyNguoiDungAction';
+import { layDanhSachUser, timKiemUserActions, xoaNguoiDungActions } from '../../../redux/actions/QuanLyNguoiDungAction';
 import { Fragment } from 'react';
 import { NavLink } from 'react-router-dom';
 import { history } from '../../../App';
+import { values } from 'lodash';
 
 const { Search } = Input;
 
 export default function UserManager(props) {
   const { listUser } = useSelector(state => state.QuanLyNguoiDungReducer);
+  // console.log('listUser', listUser);
   const dispatch = useDispatch();
 
 
   useEffect(() => {
-      dispatch(layDanhSachUser());
+    dispatch(layDanhSachUser());
 
   }, [])
 
-  const onSearch = (value) => console.log(value);
+  const onSearch = (value) => {
+    dispatch(timKiemUserActions(value));
+
+    // console.log(value)
+  };
 
   const columns = [
     {
@@ -78,28 +84,28 @@ export default function UserManager(props) {
       key: 'action',
       render: (text, user) => {
         return <Fragment>
-            <NavLink key={1} className=" mr-2  text-2xl" to={`/admin/usermanager/edituser/${user.taiKhoan}`}><EditOutlined style={{ color: 'blue' }} /> </NavLink>
-            <span style={{ cursor: 'pointer' }} key={2} className="text-2xl" onClick={() => {
-                //Gọi action xoá
-                if (window.confirm('Bạn có chắc muốn xoá người dùng ' + user.taiKhoan)) {
-                    //Gọi action
-                    dispatch();
-                }
+          <NavLink key={1} className=" mr-2  text-2xl" to={`/admin/usermanager/edituser/${user.taiKhoan}`}><EditOutlined style={{ color: 'blue' }} /> </NavLink>
+          <span style={{ cursor: 'pointer' }} key={2} className="text-2xl" onClick={() => {
+            //Gọi action xoá
+            if (window.confirm('Bạn có chắc muốn xoá người dùng ' + user.taiKhoan)) {
+              //Gọi action
+              dispatch(xoaNguoiDungActions(user.taiKhoan));
+            }
 
 
-            }}><DeleteOutlined style={{ color: 'red' }} /> </span>
+          }}><DeleteOutlined style={{ color: 'red' }} /> </span>
 
-            
+
         </Fragment>
-    },
+      },
     },
   ];
 
-  
+
 
   return (
     <div>
-      <Button type='primary' size='large' className='mb-8' onClick={() =>{
+      <Button type='primary' size='large' className='mb-8' onClick={() => {
         history.push('/admin/usermanager/adduser')
       }}>Thêm Người Dùng +</Button>
       <br />
@@ -111,8 +117,8 @@ export default function UserManager(props) {
         size={'large'}
         style={{
           width: 400,
-          fontSize:25,
-          
+          fontSize: 25,
+
         }}
         className="mb-8"
       />

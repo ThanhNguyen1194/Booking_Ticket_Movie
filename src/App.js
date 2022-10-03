@@ -8,7 +8,7 @@ import News from './pages/News/News';
 import Login from './pages/Login/Login';
 import Register from './pages/Register/Register';
 import Detail from './pages/Detail/Detail';
-import  CheckoutTemplate  from './templates/CheckoutTemplate/CheckoutTemplate';
+import CheckoutTemplate from './templates/CheckoutTemplate/CheckoutTemplate';
 import Checkout from './pages/Checkout/Checkout';
 import { Suspense, lazy } from 'react'
 import { UserTemplate } from './templates/UserTemplate/UserTemplate';
@@ -43,7 +43,7 @@ function App() {
 
         <UserTemplate path="/login" exact Component={Login} />
         <UserTemplate path="/register" exact Component={Register} />
-        
+
         <AdminTemplate path="/admin" exact Component={Dashboard} />
         <AdminTemplate path="/admin/films" exact Component={Films} />
         <AdminTemplate path="/admin/usermanager" exact Component={UserManager} />
@@ -53,12 +53,12 @@ function App() {
         <AdminTemplate path="/admin/films/edit/:id" exact Component={Edit} />
         <AdminTemplate path="/admin/films/showtime/:id/:tenphim" exact Component={ShowTime} />
 
-        
+
         <AdminTemplate path="/admin/users" exact Component={Dashboard} />
-        
+
         <HomeTemplate path="/" exact Component={Home} />
         <HomeTemplate path="*" exact Component={Home} />
-      
+
       </Switch>
     </Router>
   );
