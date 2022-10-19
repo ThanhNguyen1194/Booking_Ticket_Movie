@@ -247,18 +247,14 @@ export default function CheckoutTab(props) {
     }, [])
 
     const operations = <Fragment>
-        {!_.isEmpty(userLogin) ? <Fragment>
-            <button className='text-lg' onClick={() => {
-                history.push('/profile')
-            }}>
-                <span style={{ width: 50, height: 50, display: 'inline-block', justifyContent: 'center', alignItems: 'center', lineHeight: 1.8 }} className="text-2xl ml-5 mr-2 rounded-full bg-red-200">{userLogin.name.substr(0, 1)}</span>  Hello ! {userLogin.name}</button>
-            <button onClick={() => {
-                localStorage.removeItem(USER_LOGIN);
-                localStorage.removeItem(TOKEN);
-                history.push('/home');
-                window.location.reload();
-            }} className="text-blue-800 ml-5 text-lg">Đăng xuất</button>
-        </Fragment> : ''}
+        {!_.isEmpty(userLogin) ? <Fragment> <button onClick={() => {
+            history.push('/profile')
+        }}> <div style={{ width: 50, height: 50, display: 'flex', justifyContent: 'center', alignItems: 'center' }} className="text-2xl ml-5 rounded-full bg-red-200">{userLogin.taiKhoan.substr(0, 1)}</div>Hello ! {userLogin.taiKhoan}</button> <button onClick={() => {
+            localStorage.removeItem(USER_LOGIN);
+            localStorage.removeItem(TOKEN);
+            history.push('/home');
+            window.location.reload();
+        }} className="text-blue-800">Đăng xuất</button> </Fragment> : ''}
 
 
     </Fragment>
@@ -332,7 +328,15 @@ function KetQuaDatVe(props) {
                 </div>
                 <div className="flex flex-wrap -m-2">
                     {renderTicketItem()}
-
+                    {/* <div className="p-2 lg:w-1/3 md:w-1/2 w-full">
+                        <div className="h-full flex items-center border-gray-200 border p-4 rounded-lg">
+                            <img alt="team" className="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="https://picsum.photos/200/200" />
+                            <div className="flex-grow">
+                                <h2 className="text-gray-900 title-font font-medium">Lật mặt 48h</h2>
+                                <p className="text-gray-500">10:20 Rạp 5, Hệ thống rạp cinestar bhd </p>
+                            </div>
+                        </div>
+                    </div> */}
 
                 </div>
             </div>

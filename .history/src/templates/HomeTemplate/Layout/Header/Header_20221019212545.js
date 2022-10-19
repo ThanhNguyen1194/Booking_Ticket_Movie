@@ -8,7 +8,6 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import _ from 'lodash';
 import { TOKEN, USER_LOGIN } from '../../../../util/settings/config';
-import { useEffect } from 'react';
 
 const { Option } = Select;
 
@@ -16,6 +15,7 @@ const { Option } = Select;
 export default function Header(props) {
 
     const { userLogin } = useSelector(state => state.QuanLyNguoiDungReducer);
+    console.log(userLogin)
     const { t, i18n } = useTranslation();
     const userDetail = JSON.parse(localStorage.getItem('USER_LOGIN'))
 
@@ -27,9 +27,7 @@ export default function Header(props) {
             </li>
         }
     }
-    useEffect(() => {
-        i18n.changeLanguage('en')
-    }, [])
+
     const handleChange = (value) => {
         i18n.changeLanguage(value)
     }
@@ -51,7 +49,7 @@ export default function Header(props) {
 
         return <Fragment> <button onClick={() => {
             history.push('/profile')
-        }} className="self-center px-8 py-3 rounded">Hello ! {userLogin.name}</button>
+        }} className="self-center px-8 py-3 rounded">Hello ! {userLogin.taiKhoan}</button>
             <button onClick={() => {
                 localStorage.removeItem(USER_LOGIN);
                 localStorage.removeItem(TOKEN);

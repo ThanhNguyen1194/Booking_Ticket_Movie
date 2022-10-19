@@ -50,7 +50,7 @@ export default function HomeCarousel(props) {
 
     return (
 
-        <Carousel autoplay effect="fade" style={{ width: '100%', padding: 0, margin: 0 }} >
+        <Carousel effect="fade" style={{ width: '100%', padding: 0, margin: 0 }} >
             {renderImg()}
 
         </Carousel>

@@ -8,7 +8,6 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import _ from 'lodash';
 import { TOKEN, USER_LOGIN } from '../../../../util/settings/config';
-import { useEffect } from 'react';
 
 const { Option } = Select;
 
@@ -27,9 +26,7 @@ export default function Header(props) {
             </li>
         }
     }
-    useEffect(() => {
-        i18n.changeLanguage('en')
-    }, [])
+
     const handleChange = (value) => {
         i18n.changeLanguage(value)
     }

@@ -6,13 +6,7 @@
   content: "" !important;
 }
 .ant-carousel .slick-dots-bottom {
-  bottom: 23px !important;
+  bottom: 23px;
 }
 .ant-carousel .slick-dots li button {
-  width: 20px !important;
-  height: 20px !important;
-  border-radius: 50% !important;
-}
-.ant-carousel .slick-dots li {
-  width: 27px !important;
 }

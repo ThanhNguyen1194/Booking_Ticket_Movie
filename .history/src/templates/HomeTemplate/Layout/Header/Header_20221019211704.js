@@ -8,7 +8,6 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import _ from 'lodash';
 import { TOKEN, USER_LOGIN } from '../../../../util/settings/config';
-import { useEffect } from 'react';
 
 const { Option } = Select;
 
@@ -16,6 +15,7 @@ const { Option } = Select;
 export default function Header(props) {
 
     const { userLogin } = useSelector(state => state.QuanLyNguoiDungReducer);
+
     const { t, i18n } = useTranslation();
     const userDetail = JSON.parse(localStorage.getItem('USER_LOGIN'))
 
@@ -27,9 +27,7 @@ export default function Header(props) {
             </li>
         }
     }
-    useEffect(() => {
-        i18n.changeLanguage('en')
-    }, [])
+
     const handleChange = (value) => {
         i18n.changeLanguage(value)
     }
@@ -51,7 +49,7 @@ export default function Header(props) {
 
         return <Fragment> <button onClick={() => {
             history.push('/profile')
-        }} className="self-center px-8 py-3 rounded">Hello ! {userLogin.name}</button>
+        }} className="self-center px-8 py-3 rounded">Hello ! {userLogin.taiKhoan}</button>
             <button onClick={() => {
                 localStorage.removeItem(USER_LOGIN);
                 localStorage.removeItem(TOKEN);
@@ -68,13 +66,13 @@ export default function Header(props) {
                 </NavLink>
                 <ul className="items-stretch hidden space-x-3 lg:flex">
                     <li className="flex">
-                        <NavLink to="/home" className="flex items-center -mb-0.5 border-b-2 px-4 border-transparent  text-white " activeClassName="border-b-2  border-violet-300 text-cyan-300">Home</NavLink>
+                        <NavLink to="/home" className="flex items-center -mb-0.5 border-b-2 px-4 border-transparent  text-white" activeClassName="border-b-2  border-violet-400 text-violet-400">Home</NavLink>
                     </li>
                     {/* <li className="flex">
                         <NavLink to="/contact" className="flex items-center -mb-0.5 border-b-2 px-4 border-transparent text-white" activeClassName="border-b-2 border-violet-600 text-violet-600">Contact</NavLink>
                     </li> */}
                     <li className="flex">
-                        <NavLink to="/profile" className="flex items-center -mb-0.5 border-b-2 px-4 border-transparent text-white" activeClassName="border-b-2 border-violet-300 text-cyan-300">Profile</NavLink>
+                        <NavLink to="/profile" className="flex items-center -mb-0.5 border-b-2 px-4 border-transparent text-white" activeClassName="border-b-2 border-violet-500 text-violet-500">Profile</NavLink>
                     </li>
                     {/* <li className="flex">
                         <NavLink to="/news" className="flex items-center -mb-0.5 border-b-2 px-4 border-transparent text-white" activeClassName="border-b-2 border-violet-600 text-violet-600">News</NavLink>

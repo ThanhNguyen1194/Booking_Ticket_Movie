@@ -248,16 +248,16 @@ export default function CheckoutTab(props) {
 
     const operations = <Fragment>
         {!_.isEmpty(userLogin) ? <Fragment>
-            <button className='text-lg' onClick={() => {
+            <button onClick={() => {
                 history.push('/profile')
             }}>
-                <span style={{ width: 50, height: 50, display: 'inline-block', justifyContent: 'center', alignItems: 'center', lineHeight: 1.8 }} className="text-2xl ml-5 mr-2 rounded-full bg-red-200">{userLogin.name.substr(0, 1)}</span>  Hello ! {userLogin.name}</button>
+                <span style={{ width: 50, height: 50, display: 'inline-block', justifyContent: 'center', alignItems: 'center', lineHeight: 1.8 }} className="text-2xl ml-5 mr-3 rounded-full bg-red-200">{userLogin.name.substr(0, 1)}</span>  Hello ! {userLogin.name}</button>
             <button onClick={() => {
                 localStorage.removeItem(USER_LOGIN);
                 localStorage.removeItem(TOKEN);
                 history.push('/home');
                 window.location.reload();
-            }} className="text-blue-800 ml-5 text-lg">Đăng xuất</button>
+            }} className="text-blue-800">Đăng xuất</button>
         </Fragment> : ''}
 
 

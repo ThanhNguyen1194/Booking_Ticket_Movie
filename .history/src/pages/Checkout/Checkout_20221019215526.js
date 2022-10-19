@@ -257,7 +257,7 @@ export default function CheckoutTab(props) {
                 localStorage.removeItem(TOKEN);
                 history.push('/home');
                 window.location.reload();
-            }} className="text-blue-800 ml-5 text-lg">Đăng xuất</button>
+            }} className="text-blue-800 ml-5">Đăng xuất</button>
         </Fragment> : ''}
 
 

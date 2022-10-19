@@ -14,5 +14,5 @@
   border-radius: 50% !important;
 }
 .ant-carousel .slick-dots li {
-  width: 27px !important;
+  width: 27px;
 }

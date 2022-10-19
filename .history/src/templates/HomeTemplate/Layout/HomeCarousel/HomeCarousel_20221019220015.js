@@ -12,7 +12,7 @@ const contentStyle = {
     lineHeight: '160px',
     textAlign: 'center',
     backgroundPosition: 'center',
-    backgroundSize: 'cover',
+    backgroundSize: '',
     backgroundRepeat: 'no-repeat',
 
 };
@@ -50,7 +50,7 @@ export default function HomeCarousel(props) {
 
     return (
 
-        <Carousel autoplay effect="fade" style={{ width: '100%', padding: 0, margin: 0 }} >
+        <Carousel effect="fade" style={{ width: '100%', padding: 0, margin: 0 }} >
             {renderImg()}
 
         </Carousel>
