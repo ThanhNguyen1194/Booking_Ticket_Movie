@@ -11,7 +11,7 @@ import { NavLink } from "react-router-dom";
 import _ from "lodash";
 import { history } from "../../App";
 
-const { Header, Content, Sider } = Layout;
+const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
 
 

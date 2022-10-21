@@ -35,7 +35,7 @@ export default function HomeCarousel(props) {
 
 
 
-    }, [dispatch])
+    }, [])
 
 
     const renderImg = () => {

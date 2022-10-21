@@ -10,7 +10,7 @@ import { store } from './redux/configStore';
 import 'antd/dist/antd.min.css'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { DOMAIN } from './util/settings/config';
+import { DOMAIN, DOMAIN2 } from './util/settings/config';
 //Cấu hình realtime (websocket với signalR)
 import * as signalR from '@aspnet/signalr'
 

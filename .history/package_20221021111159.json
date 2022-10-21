@@ -14,7 +14,6 @@
     "antd": "^4.23.2",
     "axios": "^0.27.2",
     "formik": "^2.2.9",
-    "gh-pages": "^4.0.0",
     "history": "^4.10.0",
     "i18next": "^21.9.2",
     "i18next-browser-languagedetector": "^6.1.5",

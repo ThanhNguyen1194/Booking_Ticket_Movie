@@ -1,6 +1,7 @@
 //Định nghĩa các tham số cố định
 // export const DOMAIN = 'https://localhost:5001'; 
-export const DOMAIN = 'https://movieapi.cyberlearn.vn';
+export const DOMAIN = 'http://movieapi.cyberlearn.vn';
+export const DOMAIN2 = 'http://movieapi.cyberlearn.vn/api';
 export const TOKEN = 'accessToken';
 export const GROUPID = 'GP01';
 

@@ -1,6 +1,6 @@
 import './App.css';
 import { createBrowserHistory } from 'history';
-import { Router, Switch } from 'react-router';
+import { Route, Router, Switch } from 'react-router';
 import { HomeTemplate } from './templates/HomeTemplate/HomeTemplate'
 import Home from './pages/Home/Home';
 import Contact from './pages/Contact/Contact';
@@ -10,6 +10,7 @@ import Register from './pages/Register/Register';
 import Detail from './pages/Detail/Detail';
 import CheckoutTemplate from './templates/CheckoutTemplate/CheckoutTemplate';
 import Checkout from './pages/Checkout/Checkout';
+import { Suspense, lazy } from 'react'
 import { UserTemplate } from './templates/UserTemplate/UserTemplate';
 import Loading from './components/Loading/Loading';
 import Profile from './pages/Profile/Profile';
@@ -23,6 +24,7 @@ import UserManager from './pages/Admin/UserManager/UserManager';
 import AddUser from './pages/Admin/AddUser/AddUser';
 import EditUser from './pages/Admin/EditUser/EditUser';
 
+// const CheckoutTemplateLazy = lazy(() => import('./templates/CheckoutTemplate/CheckoutTemplate'))
 
 export const history = createBrowserHistory();
 

@@ -6,7 +6,7 @@ import reportWebVitals from './reportWebVitals';
 
 import { Provider } from 'react-redux';
 import { store } from './redux/configStore';
-
+import 
 import 'antd/dist/antd.min.css'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";

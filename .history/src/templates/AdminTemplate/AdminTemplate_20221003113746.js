@@ -5,13 +5,16 @@ import { TOKEN, USER_LOGIN } from "../../util/settings/config";
 import { Layout, Menu, Breadcrumb } from 'antd';
 import {
     DesktopOutlined,
+    PieChartOutlined,
     FileOutlined,
+    TeamOutlined,
+    UserOutlined,
 } from '@ant-design/icons';
 import { NavLink } from "react-router-dom";
 import _ from "lodash";
 import { history } from "../../App";
 
-const { Header, Content, Sider } = Layout;
+const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
 
 

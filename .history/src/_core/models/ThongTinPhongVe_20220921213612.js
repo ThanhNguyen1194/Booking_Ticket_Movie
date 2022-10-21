@@ -1,5 +1,4 @@
 export class ThongTinLichChieu {
-    // eslint-disable-next-line no-use-before-define
     thongTinPhim = new ThongTinPhim();
     danhSachGhe = [];
 
@@ -14,12 +13,12 @@ export class ThongTinPhim {
     tenRap = '';
     diaChi = '';
     tenPhim = '';
-    hinhAnh = '';
-    ngayChieu = '';
+    hinhAnh ='';
+    ngayChieu ='';
     gioChieu = '';
 }
 
-export class Ghe {
+export class Ghe  {
     maGhe = '';
     tenGhe = '';
     mapRap = '';
@@ -28,5 +27,5 @@ export class Ghe {
     giaVe = '';
     daDat = '';
     taiKhoanNguoiDat = '';
-
+   
 }

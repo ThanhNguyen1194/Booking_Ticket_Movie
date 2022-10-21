@@ -10,7 +10,7 @@ import { store } from './redux/configStore';
 import 'antd/dist/antd.min.css'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { DOMAIN } from './util/settings/config';
+import { DOMAIN, DOMAIN2 } from './util/settings/config';
 //Cấu hình realtime (websocket với signalR)
 import * as signalR from '@aspnet/signalr'
 
@@ -20,7 +20,7 @@ import './i18n';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 //Đoạn code để kết nối đến server lắng nghe sự kiện từ server
-export const connection = new signalR.HubConnectionBuilder().withUrl(`${DOMAIN}/DatVeHub`).configureLogging(signalR.LogLevel.Information).build();
+export const connection = new signalR.HubConnectionBuilder().withUrl(`${DOMAIN2}/DatVeHub`).configureLogging(signalR.LogLevel.Information).build();
 
 
 

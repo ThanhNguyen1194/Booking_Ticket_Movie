@@ -20,7 +20,7 @@ import './i18n';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 //Đoạn code để kết nối đến server lắng nghe sự kiện từ server
-export const connection = new signalR.HubConnectionBuilder().withUrl(`${DOMAIN}/DatVeHub`).configureLogging(signalR.LogLevel.Information).build();
+export const connection = new signalR.HubConnectionBuilder().withUrl(`${DOMAIN2}/DatVeHub`).configureLogging(signalR.LogLevel.Information).build();
 
 
 

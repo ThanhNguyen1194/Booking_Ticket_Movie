@@ -29,7 +29,7 @@ export default function Header(props) {
     }
     useEffect(() => {
         i18n.changeLanguage('en')
-    }, [i18n])
+    }, [])
     const handleChange = (value) => {
         i18n.changeLanguage(value)
     }
