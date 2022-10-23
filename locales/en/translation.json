@@ -1,8 +1,9 @@
 {
-    "hello":{
-        "1":"hello",
-        "2":"hi"
-    },
-    "signin":"signin",
-    "signup":"signup"
+  "hello": {
+    "1": "hello",
+    "2": "hi"
+  },
+  "signin": "signin",
+  "signup": "signup",
+  "register": "register"
 }
