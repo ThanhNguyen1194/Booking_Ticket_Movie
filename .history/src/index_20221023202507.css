@@ -6,7 +6,7 @@
   content: "" !important;
 }
 .ant-carousel .slick-dots-bottom {
-  bottom: 35px !important;
+  bottom: 25px !important;
 }
 .ant-carousel .slick-dots li button {
   width: 18px !important;
@@ -17,5 +17,5 @@
   width: 27px !important;
 }
 .slick-slider .slick-list {
-  padding-bottom: 10px !important;
+  /* padding-bottom: 10px !important; */
 }

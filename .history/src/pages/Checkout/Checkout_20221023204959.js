@@ -252,7 +252,7 @@ export default function CheckoutTab(props) {
             <button className='text-lg' onClick={() => {
                 history.push('/profile')
             }}>
-                <span style={{ width: 50, height: 50, display: 'inline-block', justifyContent: 'center', alignItems: 'center', lineHeight: 1.8 }} className="text-2xl ml-5 mr-2 rounded-full bg-red-200">{userLogin.taiKhoan.substr(0, 1)}</span>  Hello ! {userLogin.hoTen}</button>
+                <span style={{ width: 50, height: 50, display: 'inline-block', justifyContent: 'center', alignItems: 'center', lineHeight: 1.8 }} className="text-2xl ml-5 mr-2 rounded-full bg-red-200">{userLogin.name.substr(0, 1)}</span>  Hello ! {userLogin.name}</button>
             <button onClick={() => {
                 localStorage.removeItem(USER_LOGIN);
                 localStorage.removeItem(TOKEN);

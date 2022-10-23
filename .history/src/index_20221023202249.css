@@ -6,16 +6,16 @@
   content: "" !important;
 }
 .ant-carousel .slick-dots-bottom {
-  bottom: 35px !important;
+  bottom: 23px !important;
 }
 .ant-carousel .slick-dots li button {
-  width: 18px !important;
-  height: 18px !important;
+  width: 20px !important;
+  height: 20px !important;
   border-radius: 50% !important;
 }
 .ant-carousel .slick-dots li {
   width: 27px !important;
 }
 .slick-slider .slick-list {
-  padding-bottom: 10px !important;
+  padding-bottom: 40px !important;
 }
