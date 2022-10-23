@@ -69,7 +69,7 @@ export default function Login(props) {
                             </g>
                         </svg>
                     </div>
-                    <div className="text-2xl text-indigo-800 tracking-wide ml-2 font-semibold"><NavLink to={"/home"}>CYBERLEARN</NavLink></div>
+                    <div className="text-2xl text-indigo-800 tracking-wide ml-2 font-semibold">CYBERLEARN</div>
                 </div>
             </div>
             <div className="mt-10 px-12 sm:px-24 md:px-48 lg:px-12 lg:mt-16 xl:px-24 xl:max-w-2xl">
@@ -81,7 +81,7 @@ export default function Login(props) {
                             <div className="text-sm font-bold text-gray-700 tracking-wide">Tài khoản</div>
                             <input name="taiKhoan" onChange={formik.handleChange} className="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500" placeholder="Nhập vào tài khoản" />
                             {formik.errors.taiKhoan && formik.touched.taiKhoan ?
-                                <p className='text-red-500'>{formik.errors.taiKhoan}</p> : ''
+                                <p className='text-red-500'>{formik.errors.taiKhoan}</p>:''
                             }
                         </div>
                         <div className="mt-8">
@@ -91,8 +91,8 @@ export default function Login(props) {
                                 </div>
                             </div>
                             <input type="password" name="matKhau" onChange={formik.handleChange} className="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500" placeholder="Nhập vào mật khẩu" />
-                            {formik.errors.matKhau && formik.touched.matKhau ?
-                                <p className='text-red-500'>{formik.errors.matKhau}</p> : ''
+                            {formik.errors.matKhau && formik.touched.matKhau?
+                                <p className='text-red-500'>{formik.errors.matKhau}</p>:''
                             }
                         </div>
                         <div className="mt-8">
@@ -102,8 +102,8 @@ export default function Login(props) {
                                 </div>
                             </div>
                             <input type="email" name="email" onChange={formik.handleChange} className="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500" placeholder="Nhập vào Email" />
-                            {formik.errors.email && formik.touched.email ?
-                                <p className='text-red-500'>{formik.errors.email}</p> : ''
+                            {formik.errors.email && formik.touched.email?
+                                <p className='text-red-500'>{formik.errors.email}</p>:''
                             }
                         </div>
                         <div className="mt-8">
@@ -113,8 +113,8 @@ export default function Login(props) {
                                 </div>
                             </div>
                             <input name="soDt" onChange={formik.handleChange} className="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500" placeholder="Nhập vào Số Điện Thoại" />
-                            {formik.errors.soDt && formik.touched.soDt ?
-                                <p className='text-red-500'>{formik.errors.soDt}</p> : ''
+                            {formik.errors.soDt && formik.touched.soDt?
+                                <p className='text-red-500'>{formik.errors.soDt}</p>:''
                             }
                         </div>
                         <div className="mt-8">
@@ -124,8 +124,8 @@ export default function Login(props) {
                                 </div>
                             </div>
                             <input name="maNhom" onChange={formik.handleChange} className="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500" placeholder="Nhập vào Mã Nhóm: GP01 - GP10" />
-                            {formik.errors.maNhom && formik.touched.maNhom ?
-                                <p className='text-red-500'>{formik.errors.maNhom}</p> : ''
+                            {formik.errors.maNhom && formik.touched.maNhom?
+                                <p className='text-red-500'>{formik.errors.maNhom}</p>:''
                             }
                         </div>
                         <div className="mt-8">
@@ -135,8 +135,8 @@ export default function Login(props) {
                                 </div>
                             </div>
                             <input name="hoTen" onChange={formik.handleChange} className="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500" placeholder="Nhập vào Họ Tên" />
-                            {formik.errors.hoTen && formik.touched.hoTen ?
-                                <p className='text-red-500'>{formik.errors.hoTen}</p> : ''
+                            {formik.errors.hoTen && formik.touched.hoTen?
+                                <p className='text-red-500'>{formik.errors.hoTen}</p>:''
                             }
                         </div>
                         <div className="mt-10">
