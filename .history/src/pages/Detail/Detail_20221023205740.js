@@ -117,10 +117,11 @@ export default function Detail(props) {
                         </TabPane>
                         <TabPane tab="Thông tin" key="2" style={{ minHeight: 300 }}>
                             <p>{filmDetail.moTa}</p>
+                            {console.log(filmDetail)}
 
                         </TabPane>
                         <TabPane tab="Đánh giá" key="3" style={{ minHeight: 300 }}>
-                            Đánh giá: {filmDetail.danhGia}
+                            Đánh giá
                         </TabPane>
                     </Tabs>
                 </div>

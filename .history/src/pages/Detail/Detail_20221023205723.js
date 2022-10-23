@@ -120,7 +120,7 @@ export default function Detail(props) {
 
                         </TabPane>
                         <TabPane tab="Đánh giá" key="3" style={{ minHeight: 300 }}>
-                            Đánh giá: {filmDetail.danhGia}
+                            Đánh giá
                         </TabPane>
                     </Tabs>
                 </div>
