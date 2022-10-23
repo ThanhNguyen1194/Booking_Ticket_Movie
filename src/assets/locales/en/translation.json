@@ -1,0 +1,10 @@
+{
+  "hello": "hello",
+  "signin": "signin",
+  "signup": "signup",
+  "register": "register",
+  "Home": "Home",
+  "Profile": "Profile",
+  "Admin": "Admin",
+  "Log out": "Log out"
+}

@@ -1,0 +1,13 @@
+{
+  "hello": {
+    "1": "hello",
+    "2": "hi"
+  },
+  "signin": "signin",
+  "signup": "signup",
+  "register": "register",
+  "Home": "Home",
+  "Profile": "Profile",
+  "Admin": "Admin",
+  "Log out": "Log out"
+}

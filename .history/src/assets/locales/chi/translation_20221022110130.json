@@ -1,0 +1,11 @@
+{
+  "hello": "hello",
+
+  "signin": "登入",
+  "signup": "报名",
+  "register": "登記",
+  "Home": "家",
+  "Profile": "輪廓",
+  "Admin": "行政",
+  "Log out": "登出"
+}
