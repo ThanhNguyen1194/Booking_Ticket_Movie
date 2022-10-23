@@ -41,7 +41,7 @@ export default function Login(props) {
                             </g>
                         </svg>
                     </div>
-                    <div className="text-2xl text-indigo-800 tracking-wide ml-2 font-semibold"><NavLink to={"/home"} style={{ color: "#6366F1" }}>CYBERLEARN</NavLink></div>
+                    <div className="text-2xl text-indigo-800 tracking-wide ml-2 font-semibold"><NavLink to={"/home"}>CYBERLEARN</NavLink></div>
                 </div>
             </div>
             <div className="mt-10 px-12 sm:px-24 md:px-48 lg:px-12 lg:mt-16 xl:px-24 xl:max-w-2xl">
