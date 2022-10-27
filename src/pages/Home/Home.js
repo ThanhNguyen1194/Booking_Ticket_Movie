@@ -37,7 +37,7 @@ export default function Home(props) {
                 </div>
             </section>
 
-            <div className="mx-36">
+            <div className="mx-36" style={{width:"90%",margin:"10px auto"}}>
                 <HomeMenu  heThongRapChieu={heThongRapChieu}/>
 
             </div>

@@ -16,6 +16,10 @@
 .ant-carousel .slick-dots li {
   width: 27px !important;
 }
+.slick-slider{
+  width: 90%;
+  margin: 0 auto;
+}
 .slick-slider .slick-list {
   padding-bottom: 10px !important;
 }
