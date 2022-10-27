@@ -13,6 +13,7 @@ import { useState } from 'react';
 import { GROUPID } from '../../util/settings/config';
 import _ from 'lodash';
 import moment from 'moment';
+import { history } from '../../App';
 const { Option } = Select;
 const layout = {
     labelCol: {
@@ -43,6 +44,9 @@ export default function Profile(props) {
     };
 
     useEffect(() => {
+        if(!localStorage.getItem("USER_LOGIN")){
+            history.push("/login")
+        }
         dispatch(layThongTinNguoiDungAction())
         dispatch(LayDanhSachLoaiNguoiDungAction());
 
@@ -202,7 +206,7 @@ export default function Profile(props) {
     const renderLichSuDatVe = () => {
         return <div className='flex flex-wrap'>
             {thongTinDatVe?.map((item, index) => {
-                return <div key={index} className="m-4  max-w-md p-5 sm:flex sm:space-x-6 dark:bg-gray-200 dark:text-gray-100">
+                return <div key={index} className="m-4  max-w-md p-5 sm:flex sm:space-x-6 dark:bg-gray-200 dark:text-gray-100" style={{width:"30%"}}>
                     <div className="flex-shrink-0 w-full mb-6 h-44 sm:h-32 sm:w-32 sm:mb-0">
                         <img src={item.hinhAnh} alt="" className="object-cover object-center w-full h-full rounded dark:bg-gray-500" />
                     </div>

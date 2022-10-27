@@ -30,7 +30,7 @@ export default class Demo extends React.PureComponent {
                                 <img src="https://s3img.vcdn.vn/123phim/2018/09/ddc-dong-da-15379624326697.jpg" width="50" style={{ borderRadius: "10px" }} /> <br />
                                 <div className="text-left ml-2">
                                     {cumRap.tenCumRap}
-                                    <p className="text-red-200">Chi tiết</p>
+                                    <p className="text-red-500">Chi tiết</p>
                                 </div>
                             </div>
                         }
@@ -45,7 +45,7 @@ export default class Demo extends React.PureComponent {
                                             <div className="ml-2">
                                                 <h1 className="text-2xl text-green-700" >{phim.tenPhim}</h1>
                                                 <p>{cumRap.diaChi}</p>
-                                                <div className="grid grid-cols-6 gap-6" >
+                                                <div className="grid grid-cols-6 gap-4" >
                                                     {phim.lstLichChieuTheoPhim?.slice(0, 12).map((lichChieu, index) => {
                                                         return <NavLink className="text-md text-green-400 px-3 hover:text-orange-600" style={{ border: "2px solid rgb(74,222,128)", borderRadius: "10px" }} to={`/checkout/${lichChieu.maLichChieu}`} key={index}>
                                                             {moment(lichChieu.ngayChieuGioChieu).format('hh:mm A')}

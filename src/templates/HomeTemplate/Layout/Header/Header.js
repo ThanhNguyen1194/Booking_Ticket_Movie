@@ -73,7 +73,9 @@ export default function Header(props) {
                     {/* <li className="flex">
                         <NavLink to="/contact" className="flex items-center -mb-0.5 border-b-2 px-4 border-transparent text-white" activeClassName="border-b-2 border-violet-600 text-violet-600">Contact</NavLink>
                     </li> */}
+                    
                     <li className="flex">
+                       
                         <NavLink to="/profile" className="flex items-center -mb-0.5 border-b-2 px-4 border-transparent text-white" activeClassName="border-b-2 border-violet-300 text-cyan-300">{t("Profile")}
                         </NavLink>
                     </li>
